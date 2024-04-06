@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <title>AgroCart</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="ThemeZaa">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+        <meta name="description" content="Litho is a clean and modern design, BootStrap 4 responsive, business and portfolio multipurpose HTML5 template with 36+ ready homepage demos.">
+        <!-- favicon icon -->
+        <link rel="shortcut icon" href="images/favicon.png">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        <!-- style sheets and font icons  -->
+        <link rel="stylesheet" type="text/css" href="/static/media/assets/css/font-icons.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/media/assets/css/theme-vendors.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/media/assets/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/static/media/assets/css/responsive.css" />
+    </head>
+    <body data-mobile-nav-style="classic">
+        <!-- start header -->
+
+        <!-- end header -->
+        <!-- start hero section -->
+
+        <!-- end section -->
+        <!-- start section -->
+
+        <!-- end section -->
+        <!-- start section -->
+        <section id="call-request" class="cover-background wow animate__fadeIn md-background-position-right xs-no-padding-tb xs-border-tb border-color-medium-gray" style="background-image:url('images/home-finance-request-a-call-bg.jpg');">
+            <div class="container xs-no-padding-lr">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-7 col-lg-8 col-md-10 wow animate__fadeIn" data-wow-delay="0.3s">
+                        <div class="text-center bg-white box-shadow-large border-radius-6px padding-5-rem-tb padding-7-rem-lr sm-padding-5-rem-all xs-padding-3-half-rem-lr xs-padding-6-rem-tb xs-no-border-radius">
+                            <span class="alt-font text-medium text-olivine-green text-uppercase font-weight-500 d-block margin-15px-bottom sm-margin-10px-bottom">Welcome to AgroCart</span>
+
+                            <!-- start contact form -->
+                            {% if messages %}
+  <div class="alert alert-success" role="alert">
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+  </div>
+{% endif %}
+
+                            <form method="post" class="margin-30px-bottom">
+                              {% csrf_token %}
+                              <div class="form-group">
+                                          <input type="text" class="medium-input border-radius-5px margin-25px-bottom required"
+                                              name="username" aria-describedby="emailHelp"
+                                              placeholder="Enter Username...">
+                                      </div>
+                                      <div class="form-group">
+                                          <input type="password" class="medium-input border-radius-5px margin-25px-bottom required"
+                                              name="password"  placeholder="Password">
+                                      </div>
+                                      <div class="form-group">
+                                        <button type="submit" class="btn btn-fancy btn-large btn-olivine-green btn-round-edge w-100 no-margin-bottom " value="Submit">Submit</button>
+                                      </div>
+                                <div class="form-results border-radius-5px d-none"></div>
+                            </form>
+                            <p class="w-80 mx-auto text-extra-small line-height-22px m-0 xs-w-100">We are committed to protecting your privacy. We will never collect information about you without your explicit consent.</p>
+                            <!-- end contact form -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start footer -->
+
+        <!-- end footer -->
+        <!-- start scroll to top -->
+        <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
+        <!-- end scroll to top -->
+        <!-- javascript -->
+        <script type="text/javascript" src="/static/media/assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/media/assets/js/theme-vendors.min.js"></script>
+        <script type="text/javascript" src="/static/media/assets/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Product Information
+{% endblock %}
+
+{% block content %}
+<!-- Product Details Section -->
+<div class="container product-details">
+    <h2>Product Details</h2>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .product-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product-info {
+            margin-top: 15px;
+        }
+
+        .product-info p {
+            margin: 5px 0;
+        }
+
+        .no-products-message {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+        }
+        .product-item img {
+           width: 200px;
+           height: 200px;
+           border-radius: 5px;
+        }
+    </style>
+    <div class="product-list">
+        {% if products %}
+            {% for product in products %}
+                <div class="product-item">
+                    <img src="{{ product.img.url }}" alt="Product Image">
+                    <div class="product-info">
+                        <p><strong>Username:</strong> {{ product.uname }}</p>
+                        <p><strong>Product Name:</strong> {{ product.name }}</p>
+                        <p><strong>Price:</strong> {{ product.price }}</p>
+                        <p><strong>Quantity:</strong> {{ product.quantity }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-products-message">No products added yet.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

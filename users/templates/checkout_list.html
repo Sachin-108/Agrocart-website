@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+  Order Details
+{% endblock %}
+
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>Order Number</th>
+            <th>User</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Phone Number</th>
+            <th>Total Price</th>
+            <th>Payment Option</th>
+            <th>Date & Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for checkout in checkouts %}
+        <tr>
+            <td>{{ checkout.id }}</td>
+            <td>{{ checkout.user }}</td>
+            <td>{{ checkout.firstname }}</td>
+            <td>{{ checkout.lastname }}</td>
+            <td>{{ checkout.email }}</td>
+            <td>{{ checkout.address }}</td>
+            <td>{{ checkout.city }}</td>
+            <td>{{ checkout.phone_no }}</td>
+            <td>{{ checkout.total_price }}</td>
+            <td>{{ checkout.get_payment_option_display }}</td>
+            <td>{{ checkout.date_time }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

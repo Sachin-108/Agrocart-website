@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sagaranadu Sattvic Foods Ltd</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/animate.css">
+    
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="static/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="static/css/aos.css">
+
+    <link rel="stylesheet" href="static/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="static/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="static/css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="static/css/flaticon.css">
+    <link rel="stylesheet" href="static/css/icomoon.css">
+    <link rel="stylesheet" href="static/css/style.css">
+	<style>/* Style for the "+" button */
+		/* Style for a square "+" button */
+		.increase-quantity {
+			background-color: #FFFFFF; /* Button background color */
+    		color: #FFFFFF; /* Button text color */
+    		border: none; /* Remove button border */
+    		width: 20px; /* Set the width to match the height to create a square */
+    		height: 10px;
+    		font-size: 20px; /* Adjust the font size as needed */
+    		cursor: pointer; /* Show a pointer cursor on hover */
+		}
+
+		/* Add a hover effect */
+		.increase-quantity:hover {
+   		 background-color: #34a715; /* Change color on hover */
+		}
+
+		.decrease-quantity {
+			background-color: #FFFFFF; /* Button background color */
+    		color: #FFFFFF; /* Button text color */
+    		border: none; /* Remove button border */
+    		width: 20px; /* Set the width to match the height to create a square */
+    		height: 10px;
+    		font-size: 20px; /* Adjust the font size as needed */
+    		cursor: pointer; /* Show a pointer cursor on hover */
+		}
+
+		/* Add a hover effect */
+		.decrease-quantity:hover {
+   		 background-color: #34a715; /* Change color on hover */
+		}
+</style>
+
+</head>
+<style>
+	/* Style for the cart dropdown */
+.cart-dropdown {
+max-width: 300px; /* Adjust the maximum width as needed */
+padding: 10px;
+background-color: #fff;
+border: 1px solid #ddd;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.remove-button {
+  font-size: 16px; /* Adjust the font size as needed */
+  padding: 10px 10px; /* Adjust the padding to increase the button size */
+}
+
+/* Style for each cart item */
+.cart-item {
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.cart-item img {
+max-width: 50px; /* Adjust the maximum image width as needed */
+margin-right: 10px;
+}
+
+.cart-item .item-name {
+flex-grow: 1;
+}
+
+.cart-item .item-quantity {
+margin-right: 10px;
+font-weight: bold;
+}
+
+.cart-item button {
+width: 20px; /* Set a fixed width to make the button square */
+height: 20px; /* Set a fixed height to make the button square */
+background-color: #82ae46;
+color: #fff;
+border: none;
+cursor: pointer;
+border-radius: 0; /* Remove border-radius to make the button square */
+font-size: 14px;
+line-height: 1;
+transition: background-color 0.3s;
+}
+
+/* .cart-item button {
+background-color: #25e431;
+color: #fff;
+border: none;
+cursor: pointer;
+padding: 3px 8px;
+border-radius: 50%;
+font-size: 14px;
+line-height: 1;
+transition: background-color 0.3s;
+} */
+
+.cart-item button:hover {
+background-color: #08d313e6;
+}
+
+/* Style for the "View Cart" and "Checkout" links */
+.dropdown-item {
+color: #333;
+text-align: left;
+font-weight: bold;
+}
+
+.dropdown-item:hover {
+background-color: #25e679;
+color: #fff;
+}
+
+.custom-cart-dropdown {
+width: 400px; /* You can adjust the width as needed */
+}
+
+.cart-link {
+margin-right: 10px; /* Adjust the margin value as needed */
+}
+
+
+</style> 
+
+
+</head>
+<body class="goto-here">
+	  <div class="py-1 bg-primary">
+	  <div class="container">
+		  <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
+			  <div class="col-lg-12 d-block">
+				  <div class="row d-flex">
+					  <div class="col-md pr-4 d-flex topper align-items-center">
+						  <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						  <span class="text">+ 91 9513107593</span>
+					  </div>
+					  <div class="col-md pr-4 d-flex topper align-items-center">
+						  <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+						  <span class="text">gautamshigaonkar@gmail.com</span>
+					  </div>
+					  <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
+						  <span class="text">3-5 Business days delivery &amp; Free Returns</span>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+		</div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	  <div class="container">
+		<a class="navbar-brand" href="index">HAEGL TECHNOLOGIES PVT LTD<span>.</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="oi oi-menu"></span> Menu
+		</button>
+
+		<div class="collapse navbar-collapse" id="ftco-nav">
+		  <ul class="navbar-nav ml-auto">
+			<li class="nav-item active"><a href="index" class="nav-link">Home</a></li>
+			<!-- <li class="nav-item"><a href="#all-products" class="nav-link">Products</a></li> -->
+			<li class="nav-item"><a href="about" class="nav-link">About</a></li>
+			<li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+			<li class="nav-item"><a href="index" class="nav-link">Cart</a></li>
+		  <!-- <li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" id="cart-dropdown-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="icon-shopping_cart"></span> Cart
+			</a>
+			<div class="dropdown-menu cart-dropdown custom-cart-dropdown" aria-labelledby="cart-dropdown-link">
+
+				Cart items will be added here dynamically -->
+<!-- <div id="cart-items-container">
+  {% for item in cart_items %}
+    <div class="cart-item" data-item-id="{{ item.id }}">
+      <div class="item-remove">
+        <a href="{% url 'remove_from_cart' item.id %}" class="remove-button">
+          <span class="ion-ios-close"></span>&nbsp;
+        </a>
+      </div>
+      <div class="item-image">
+        <img src="/media/{{ item.product.product_image }}" width="50px" height="50px" alt="">
+      </div>
+      <div class="item-details">
+        <span class="item-name">{{ item.product.title }} </span>
+        
+        <div class="quantity-container">
+          <button class="increase-quantity" onclick="updateQuantity('increase', {{ item.id }})">+</button>
+          <span class="item-quantity" id="quantity{{ item.id }}">{{ item.quantity }}</span>
+          <button class="decrease-quantity" onclick="updateQuantity('decrease', {{ item.id }})">-</button>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div> -->
+
+
+		  
+		  <!-- <a href="{% url 'clear-cart' %}" class="clear-cart-link cart-link">Clear Cart</a>
+		  <a href="checkout" class="clear-cart-link cart-link">Checkout</a>
+		  </div>
+		  </li> --> 
+			<!-- <li class="nav-item cta cta-colored"><a href="login/" class="nav-link"><span class="icon-user">{{ user.first_name }}</span></a></li> -->
+		  <!-- <li class="nav-item cta cta-colored"><a href="logout/" class="nav-link"><span class="icon-ion-log-out">Logout</span></a></li> -->
+		  </ul>
+			</div>
+			</div>
+			  </nav>
+  <!-- END nav -->
+
+	<!-- <section class="ftco-section ftco-cart">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 ftco-animate">
+					<div class="cart-list">
+						<table class="table">
+							<thead class="thead-primary">
+								<tr class="text-center">
+									<th>Remove</th>
+									<th></th>
+									<th>Product Name</th>
+									<th>Price</th>
+									<th>Quantity</th>
+									 <th>SubTotal</th> -->
+								<!-- </tr>
+							</thead>
+							<tbody>
+								{% for item in cart_items %}
+									<tr class="text-center">
+										
+										<td class="product-remove"><a href="{% url 'remove_from_cart' item.id %}"><span class="ion-ios-close"></span></a></td>
+										<td class="image-prod">
+										<div class="img">
+											<img src="/media/{{item.product.product_image}}"width="100px" height="100px" alt="">
+										</div> 
+										</td>
+										<td class="product-name">
+											<h3>{{ item.product.title }}</h3>
+										</td>
+										<td class="price">Rs.{{ item.product.price }}</td>
+										<td class="quantity">
+										<div class="quantity-container">
+											<button class="increase-quantity" onclick="updateQuantity('increase', {{ item.id }})">+</button>
+											<span class="item-quantity" id="quantity{{ item.id }}">{{ item.quantity }}</span>
+											<button class="decrease-quantity" onclick="updateQuantity('decrease', {{ item.id }})">-</button>
+										</div>	
+										</td>
+										 <td class="subtotal">Rs.{{sub_total }}</td> -->
+									<!-- </tr>
+								{% endfor %}
+							</tbody>
+						</table>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>  -->
+	
+	
+	<section class="ftco-section">
+		<div class="container">
+		  <div class="row justify-content-center">
+			<div class="col-xl-7 ftco-animate">
+						  <form  method="post"  action="{% url 'checkout' %}" >
+				{% csrf_token %}
+							  <h3 class="mb-4 billing-heading"><b>Billing Details</b></h3><br>
+					<div class="row align-items-end">
+						<div class="col-md-6">
+					  <div class="form-group">
+						  <label for="firstname"><b>First Name</b></label>
+						<input type="text" class="form-control" name="firstname" placeholder="" required>
+					  </div>
+					</div>
+					<div class="col-md-6">
+					  <div class="form-group">
+						  <label for="lastname"><b>Last Name</b></label>
+						<input type="text" class="form-control" name="lastname" placeholder="" required>
+					  </div>
+				  </div>
+  
+					  <div class="w-100"></div>
+					  <div class="col-md-6">
+						  <div class="form-group">
+						  <label for="streetaddress"><b>Street Address</b></label>
+						<input type="text" class="form-control" name="address" required >
+					  </div>
+					  </div>
+				  <div class="col-md-6">
+					  <div class="form-group">
+						  <label for="phone"><b>Phone</b></label>
+						<input type="text" class="form-control" name="phone_no" placeholder="" required>
+					  </div>
+					</div>
+					  <div class="w-100"></div>
+					  <div class="col-md-6">
+						  <div class="form-group">
+						  <label for="towncity"><b>Town / City</b></label>
+						<input type="text" class="form-control" name="city" placeholder="" required>
+					  </div>
+					  </div>
+				  <div class="col-md-6">
+				   <div class="form-group">
+					 <label for="email++address"><b>Email Address</b></label>
+					 <input type="text" class="form-control" name="email" placeholder="" required>
+				   </div>
+				  </div>
+				   <div class="w-100"></div>
+				  <div class="col-md-6">
+				   <div class="form-group">
+					 <label for="emailaddress"><b>Total Price</b></label>
+					 <input type="text" class="form-control" name="total_price" value="{{ total_price }}" readonly>
+				   </div>
+				  </div>
+				  <div class="col-md-6">
+				   <div class="form-group">
+					 	<input type="radio" id="cash_on_delivery" name="payment_option" value="cash_on_delivery" required>
+	   					<label for="cash_on_delivery"><b>Cash on Delivery</b></label><br>
+	   					<input type="radio" id="online_payment" name="payment_option" value="online_payment" required>
+	   					<label for="online_payment"><b>Online Payment</b></label><br>
+				   </div>
+				  </div>
+  
+				  <div class="w-100"></div>
+				  <div class="col-md-12">
+					  <div class="form-group mt-4">
+										  <div class="radio">
+											<button type="submit" class="btn btn-primary px-5">Place Order</button>
+										</div>
+					   </div>
+				  </div>
+				  </div>
+				<!-- END -->
+				</div>
+			    </form>
+			</div> <!-- .col-md-8 -->
+		  </div>
+		</div>
+	  </section> <!-- .section -->
+	  
+	  <footer class="ftco-footer ftco-section">
+		<div class="container">
+			<div class="row">
+				<div class="mouse">
+						  <a href="#" class="mouse-icon">
+							  <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
+						  </a>
+					  </div>
+			</div>
+		  <div class="row mb-5">
+			<div class="col-md">
+			  <div class="ftco-footer-widget mb-4">
+				<h2 class="ftco-heading-2">HAEGL TECHNOLOGIES PVT LTD</h2>
+				<p>"Crafted with excellence, our rice is cultivated with the utmost care and dedication, ensuring each grain embodies the finest quality."</p>
+				<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+				  <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+				  <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+				</ul>
+			  </div>
+			</div>
+			<div class="col-md">
+			  <div class="ftco-footer-widget mb-4 ml-md-5">
+				<h2 class="ftco-heading-2">Menu</h2>
+				<ul class="list-unstyled">
+				  <li><a href="index" class="py-2 d-block">Our Products</a></li>
+				  <li><a href="about" class="py-2 d-block">About</a></li>
+				  <li><a href="contact" class="py-2 d-block">Contact Us</a></li>
+				  <li><a href="cancellation" class="py-2 d-block">Cancellation and Refunds</a></li>
+				  <li><a href="policy" class="py-2 d-block">Policy</a></li>
+				</ul>
+			  </div>
+			</div>
+
+			<div class="col-md">
+			  <div class="ftco-footer-widget mb-4">
+				  <h2 class="ftco-heading-2">Have a Questions?</h2>
+				  <div class="block-23 mb-3">
+					<ul>
+					  <li><span class="icon icon-map-marker"></span><span class="text">Haegal Technologies, Akalwadi Complex 1st Floor Vidyanagar Hubblli-21 ,Karnataka.</li>
+					  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 9513107593</span></a></li>
+					  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">gautamshigaonkar@gmail.com</span></a></li>
+					</ul>
+				  </div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="row">
+			<div class="col-md-12 text-center">
+  
+			  <p>
+				Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made and hosted with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://www.linkedin.com/company/haegl-academy/" target="_blank">Haegl Technologies Pvt Ltd</a>
+							
+						  </p>
+			</div>
+		  </div>
+		</div>
+	  </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="static/js/popper.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/jquery.easing.1.3.js"></script>
+  <script src="static/js/jquery.waypoints.min.js"></script>
+  <script src="static/js/jquery.stellar.min.js"></script>
+  <script src="static/js/owl.carousel.min.js"></script>
+  <script src="static/js/jquery.magnific-popup.min.js"></script>
+  <script src="static/js/aos.js"></script>
+  <script src="static/js/jquery.animateNumber.min.js"></script>
+  <script src="static/js/bootstrap-datepicker.js"></script>
+  <script src="static/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="static/js/google-map.js"></script>
+  <script src="static/js/main.js"></script>
+  
+	 <script>
+		function updateQuantity(action, itemId) {
+		  // Send an AJAX request to update the quantity.
+		  fetch(`/update_quantity/${itemId}/${action}/`)
+			.then(response => response.json())
+			.then(data => {
+			  // Update the quantity displayed on the page.
+			  document.getElementById(`quantity${itemId}`).textContent = data.new_quantity;
+			})
+			.catch(error => {
+			  console.error('Error updating quantity:', error);
+			});
+		}
+		</script>
+	  
+	  
+	  <script type="text/javascript">
+		var revapi263,
+				tpj;
+		(function () {
+			if (!/loaded|interactive|complete/.test(document.readyState))
+				document.addEventListener("DOMContentLoaded", onLoad);
+			else
+				onLoad();
+			function onLoad() {
+				if (tpj === undefined) {
+					tpj = jQuery;
+					if ("off" == "on")
+						tpj.noConflict();
+				}
+				if (tpj("#rev_slider_35_1").revolution == undefined) {
+					revslider_showDoubleJqueryError("#rev_slider_35_1");
+				} else {
+					var revOffset = tpj(window).width() <= 767 ? '77px' : '128px';
+					revapi263 = tpj("#rev_slider_35_1").show().revolution({
+						sliderType: "standard",
+						jsFileLocation: "revolution/js/",
+						sliderLayout: "fullwidth",
+						dottedOverlay: "none",
+						delay: 9000,
+						navigation: {
+							keyboardNavigation: "on",
+							keyboard_direction: "horizontal",
+							mouseScrollNavigation: "off",
+							mouseScrollReverse: "default",
+							onHoverStop: "off",
+							touch: {
+								touchenabled: "on",
+								touchOnDesktop: "on",
+								swipe_threshold: 75,
+								swipe_min_touches: 1,
+								swipe_direction: "horizontal",
+								drag_block_vertical: false
+							},
+							tabs: {
+								enable: true,
+								style: 'erinyen',
+								direction: 'horizontal',
+								h_align: "center",
+								v_align: "bottom",
+								h_offset: -480,
+								v_offset: 80,
+								space: 25,
+								hide_onleave: false,
+								hide_onmobile: false,
+								wrapper_padding: 0,
+								width: 20,
+								height: ['auto'],
+								wrapper_color: 'transparent',
+								wrapper_opacity: '0',
+								tmp: '<span class="alt-font text-extra-dark-gray">{{param1}}</span>',
+							}
+						},
+						responsiveLevels: [1240, 1025, 992, 480],
+						visibilityLevels: [1240, 1024, 778, 480],
+						gridwidth: [1140, 1024, 778, 480],
+						gridheight: [870, 640, 910, 868],
+						lazyType: "none",
+						shadow: 0,
+						spinner: "spinner5",
+						stopLoop: "on",
+						stopAfterLoops: 0,
+						stopAtSlide: 1,
+						shuffle: "off",
+						autoHeight: "off",
+						fullScreenAutoWidth: "off",
+						fullScreenAlignForce: "off",
+						fullScreenOffsetContainer: "",
+						fullScreenOffset: revOffset,
+						disableProgressBar: "on",
+						hideThumbsOnMobile: "off",
+						hideSliderAtLimit: 0,
+						hideCaptionAtLimit: 0,
+						hideAllCaptionAtLimit: 0,
+						debugMode: false,
+						fallbacks: {
+							simplifyAll: "off",
+							nextSlideOnWindowFocus: "off",
+							disableFocusListener: false,
+						}
+					});
+				}
+				; /* END OF revapi call */
+	
+				BubbleMorphAddOn(jQuery, revapi263);
+			}
+			; /* END OF ON LOAD FUNCTION */
+		}()); /* END OF WRAPPING FUNCTION */
+	</script>
+	<!-- <script>
+		$(document).ready(function() {
+			$(".increment-quantity").click(function() {
+				var productId = $(this).data("product-id");
+				var quantityElement = $(".quantity[data-product-id='" + productId + "']");
+				var currentQuantity = parseInt(quantityElement.text());
+				quantityElement.text(currentQuantity + 1);
+			});
+	
+			$(".decrement-quantity").click(function() {
+				var productId = $(this).data("product-id");
+				var quantityElement = $(".quantity[data-product-id='" + productId + "']");
+				var currentQuantity = parseInt(quantityElement.text());
+				if (currentQuantity > 1) {
+					quantityElement.text(currentQuantity - 1);
+				}
+			});
+		});
+	</script> -->
+
+	<!-- <script>
+		// Function to update the total price
+		function updateTotalPrice() {
+			let total = 0;
+	
+			// Iterate through each cart item to calculate the total price
+			document.querySelectorAll('.cart-item').forEach(item => {
+				const itemId = item.getAttribute('data-item-id');
+				const quantity = parseInt(document.getElementById(`quantity${itemId}`).textContent);
+				const subTotal = parseFloat(document.querySelector(`#quantity${itemId} + .item-subtotal`).textContent.substring(3)); // Remove 'Rs.' and parse as a float
+				total += quantity * subTotal;
+			});
+	
+			// Update the total price displayed in the input element
+			document.getElementById('total-price').value = total.toFixed(2);
+		}
+	
+		// Attach event listeners to increase and decrease buttons
+		document.querySelectorAll('.increase-quantity').forEach(button => {
+			button.addEventListener('click', function () {
+				const itemId = this.getAttribute('data-item-id');
+				updateQuantity('increase', itemId);
+			});
+		});
+	
+		document.querySelectorAll('.decrease-quantity').forEach(button => {
+			button.addEventListener('click', function () {
+				const itemId = this.getAttribute('data-item-id');
+				updateQuantity('decrease', itemId);
+			});
+		});
+	</script> -->
+	<!-- <script>
+  function updateQuantity(action, itemId) {
+    // Send an AJAX request to update the quantity.
+    fetch(`/update_quantity/${itemId}/${action}/`)
+      .then(response => response.json())
+      .then(data => {
+        // Update the quantity displayed on the page.
+        const quantityElement = document.getElementById(`quantity${itemId}`);
+        quantityElement.textContent = data.new_quantity;
+
+        // Update the total price.
+        updateTotalPrice();
+      })
+      .catch(error => {
+        console.error('Error updating quantity:', error);
+      });
+  }
+
+  function updateTotalPrice() {
+    // Get all the elements with class 'cart-item'.
+    const cartItemElements = document.querySelectorAll('.cart-item');
+    let totalPrice = 0;
+
+    cartItemElements.forEach(cartItemElement => {
+      const itemId = cartItemElement.getAttribute('data-item-id');
+      const quantity = parseFloat(document.getElementById(`quantity${itemId}`).textContent);
+      const price = parseFloat(document.getElementById(`price${itemId}`).textContent);
+      totalPrice += quantity * price;
+    });
+
+    // Update the total price element.
+    const totalPriceElement = document.getElementById('totalPrice');
+    totalPriceElement.textContent = 'Rs.' + totalPrice.toFixed(2);
+  }
+</script> -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $(".increase-quantity").on("click", function() {
+        updateQuantity('increase', $(this).data("cart-item-id"));
+    });
+    $(".decrease-quantity").on("click", function() {
+        updateQuantity('decrease', $(this).data("cart-item-id"));
+    });
+
+    function updateQuantity(action, cartItemId) {
+        $.post("/update_cart_item/" + cartItemId + "/" + action + "/", function(data) {
+            // Update the displayed quantity
+            $("#quantity-" + cartItemId).text(data.new_quantity);
+            // Update the displayed total price
+            $("#total-price").text(data.total_price);
+        });
+    }
+});
+</script>
+
+
+	
+		
+
+	
+
+
+    
+  </body>
+</html>

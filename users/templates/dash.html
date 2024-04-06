@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <style>
+        /* CSS styles */
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="file"],
+        select,
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="file"] {
+            cursor: pointer;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        /* Styles for product details section */
+        .product-details {
+            margin-top: 30px;
+        }
+        .product-item {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .product-image img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 10px;
+        }
+        .product-info {
+            flex-grow: 1;
+        }
+        .product-info-row {
+            display: flex;
+            margin-bottom: 5px;
+        }
+        .product-info-label {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .product-info-value {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Product</h2>
+        <form method="POST" enctype="multipart/form-data" action="{% url 'dash' %}">
+            {% csrf_token %}
+            <!-- Username -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="uname" required>
+
+            <!-- Product Name -->
+            <label for="product_name">Product Name:</label>
+            <input type="text" id="product_name" name="name" required>
+
+            <!-- Price -->
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" min="0" step="0.01" required>
+
+            <!-- Quantity -->
+            <label for="quantity">Quantity:</label>
+            <input type="text" id="quantity" name="quantity" min="1" required>
+
+            <!-- District -->
+            <label for="district">District:</label>
+            <select id="district" name="district" required>
+                <option value="dharwad">Dharwad</option>
+                <option value="bengaluru">Bangalore</option>
+                <option value="raichur">Raichur</option>
+                <option value="koppal">Koppal</option>
+            </select>
+
+            <!-- Picture -->
+            <label for="picture">Picture:</label>
+            <input type="file" id="picture" name="img" accept="image/*" required>
+
+            <!-- Submit Button -->
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
+
+    <!-- Product Details Section -->
+    <div class="container product-details">
+        <h2>Product Details</h2>
+        {% if products %}
+            {% for product in products %}
+                <div class="product-item">
+                    <div class="product-info">
+                        <div class="product-info-row">
+                            <div class="product-info-label">Username:</div>
+                            <div class="product-info-value">{{ product.uname }}</div>
+                        </div>
+                        <div class="product-info-row">
+                            <div class="product-info-label">Product Name:</div>
+                            <div class="product-info-value">{{ product.name }}</div>
+                        </div>
+                        <div class="product-info-row">
+                            <div class="product-info-label">Price:</div>
+                            <div class="product-info-value">{{ product.price }}</div>
+                        </div>
+                        <div class="product-info-row">
+                            <div class="product-info-label">Quantity:</div>
+                            <div class="product-info-value">{{ product.quantity }}</div>
+                        </div>
+                    </div>
+                    <div class="product-image">
+                        <img src="{{ product.img.url }}" alt="Product Image">
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No products added yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

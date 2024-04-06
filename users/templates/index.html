@@ -1,0 +1,772 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AgroCart</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% comment %}     
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet"> {% endcomment %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400;1,600&&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="static/css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet" href="static/css/animate.css">
+    
+<link rel="stylesheet" href="static/css/owl.carousel.min.css">
+<link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="static/css/magnific-popup.css">
+
+<link rel="stylesheet" href="static/css/aos.css">
+<link rel="stylesheet" href="static/css/ionicons.min.css">
+
+<link rel="stylesheet" href="static/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="static/css/jquery.timepicker.css">
+<link rel="stylesheet" href="static/css/flaticon.css">
+<link rel="stylesheet" href="static/css/icomoon.css">
+<link rel="stylesheet" href="static/css/style.css">
+
+
+ 
+
+
+<style>
+      /* Style for the cart dropdown */
+.cart-dropdown {
+  max-width: 300px; /* Adjust the maximum width as needed */
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.remove-button {
+    font-size: 16px; /* Adjust the font size as needed */
+    padding: 10px 10px; /* Adjust the padding to increase the button size */
+  }
+
+/* Style for each cart item */
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-item img {
+  max-width: 50px; /* Adjust the maximum image width as needed */
+  margin-right: 10px;
+}
+
+.cart-item .item-name {
+  flex-grow: 1;
+}
+
+.cart-item .item-quantity {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.cart-item button {
+  width: 20px; /* Set a fixed width to make the button square */
+  height: 20px; /* Set a fixed height to make the button square */
+  background-color: #82ae46;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 0; /* Remove border-radius to make the button square */
+  font-size: 14px;
+  line-height: 1;
+  transition: background-color 0.3s;
+}
+
+/* .cart-item button {
+  background-color: #25e431;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 3px 8px;
+  border-radius: 50%;
+  font-size: 14px;
+  line-height: 1;
+  transition: background-color 0.3s;
+} */
+
+.cart-item button:hover {
+  background-color: #08d313e6;
+}
+
+/* Style for the "View Cart" and "Checkout" links */
+.dropdown-item {
+  color: #333;
+  text-align: left;
+  font-weight: bold;
+}
+
+.dropdown-item:hover {
+  background-color: #25e679;
+  color: #fff;
+}
+
+.custom-cart-dropdown {
+  width: 400px; /* You can adjust the width as needed */
+}
+
+.cart-link {
+  margin-right: 10px; /* Adjust the margin value as needed */
+}
+
+
+.side-navigation {
+    position: absolute;
+    top: 1065px; /* Adjust top position as needed */
+    right: 0px;
+     
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Ensure it appears above other content */
+}
+
+.side-navigation h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.side-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-navigation ul li {
+    margin-bottom: 10px;
+}
+
+.side-navigation ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.side-navigation ul li a:hover {
+    color: #007bff;
+}
+.img-fluid {
+    width: 200px; /* Set your desired width */
+    height: 200px; /* Set your desired height */
+}
+
+
+</style> 
+
+  
+</head>
+  <body class="goto-here">
+		<div class="py-1 bg-primary">
+    	<div class="container">
+    		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
+	    		<div class="col-lg-12 d-block">
+		    		<div class="row d-flex">
+		    			 <div class="col-md pr-4 d-flex topper align-items-center">
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						    <span class="text">+91 9513107593</span> 
+					    </div>
+					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+						    <span class="text">Gautam Shigaonkar</span>
+					    </div>
+              
+					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
+						    <span class="text">3-5 Business days delivery &amp; Free Returns</span>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+		  </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index">AgroCart<span>.</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="index" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="#all-products" class="nav-link">Products</a></li>
+	          <li class="nav-item"><a href="save_farmer" class="nav-link">Farmer Register</a></li>
+	          <li class="nav-item"><a href="farmer_login" class="nav-link">Farmer Login</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="cart-dropdown-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="icon-shopping_cart"></span> 
+              </a>
+              <div class="dropdown-menu cart-dropdown custom-cart-dropdown" aria-labelledby="cart-dropdown-link">
+
+                  <!-- Cart items will be added here dynamically -->
+                  <div id="cart-items-container">
+                    {% for cart_item in cart_items %}
+                      <div class="cart-item">
+                        <div class="item-remove">
+                          <a href="{% url 'remove_from_cart' cart_item.id %}" class="remove-button">
+                            <span class="ion-ios-close"></span>&nbsp;
+                          </a>
+                        </div>
+                        <div class="item-image">
+                          <img src="{{ cart_item.product.img.url }}" width="50px" height="50px" alt="">
+                        </div>
+                        <div class="item-details">
+                          <span class="item-name">{{ cart_item.product.name }}</span>
+                    
+                          <div class="quantity-container">
+                            <button class="increase-quantity" onclick="updateQuantity('increase', {{ cart_item.id }})">+</button>
+                            <span class="item-quantity" id="quantity{{ cart_item.id }}">{{ cart_item.quantity }}</span>
+                            <button class="decrease-quantity" onclick="updateQuantity('decrease', {{ cart_item.id }})">-</button>
+                          </div>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                  
+                 
+                  
+  
+
+            
+            <a href="{% url 'clear-cart' %}" class="clear-cart-link cart-link">Clear Cart</a>
+            <a href="checkout" class="clear-cart-link cart-link">Checkout</a>
+            </div>
+            </li>
+            <li class="nav-item cta cta-colored"><a href="save_customer" class="nav-link"><span class="icon-ion-log-out">Register</span></a></li>
+
+            <li class="nav-item cta cta-colored">
+              {% if user.is_authenticated %}
+                  <a href="#" class="nav-link">
+                      <span class="icon-user">{{ user.first_name }}</span>
+                  </a>
+              {% else %}
+                  <a href="login/" class="nav-link">
+                      <span class="icon-user">Login</span>
+                  </a>
+              {% endif %}
+          </li>
+                      <li class="nav-item cta cta-colored"><a href="logout" class="nav-link"><span class="icon-ion-log-out">Logout</span></a></li>
+            </ul>
+	          </div>
+	          </div>
+	            </nav>
+    <!-- END nav -->
+
+    <section id="home-section" class="hero">
+		  <div class="home-slider owl-carousel">
+	      <div class="slider-item" style="background-image: url(static/images/bg_8.png);">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+	            <div class="col-md-12 ftco-animate text-center">
+	              <h1 class="mb-2">Shop Organic </h1>
+	              <!-- <h2 class="subheading mb-4">"From our farm to your plate, we bring you the finest quality rice, nurturing every grain with care and dedication."</h2> -->
+	              <p><a href="#all-products" class="btn btn-primary">Shop Now </a></p>
+	            </div>
+
+	          </div>
+	        </div>
+	      </div>
+
+	      
+	    </div>
+    </section>
+
+    <section class="ftco-section">
+			<div class="container">
+				<div class="row no-gutters ftco-services">
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2">
+            		<span class="flaticon-shipped"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Free Shipping</h3>
+                <span>On order over Rs.1200</span>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
+            		<span class="flaticon-diet"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Always Organic</h3>
+                <span>Product well package</span>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2">
+            		<span class="flaticon-award"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Superior Quality</h3>
+                <span>Quality Products</span>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-4 d-flex justify-content-center align-items-center mb-2">
+            		<span class="flaticon-customer-service"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Support</h3>
+                <span>24/7 Support</span>
+              </div>
+            </div>      
+          </div>
+        </div>
+			</div>
+		</section>
+
+     
+
+  <section class="padding-4-half-rem-lr lg-padding-1-half-rem-lr sm-no-padding-lr" id="all-products">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 tab-style-01 wow animate__fadeIn">
+                        <!-- start filter navigation -->
+
+                        <ul class="shop-filter grid-filter nav nav-tabs text-uppercase justify-content-center text-extra-medium text-center alt-font font-weight-500 margin-6-half-rem-bottom margin-2-half-rem-top md-margin-4-rem-bottom sm-margin-20px-bottom">
+                          <li class="nav-item active"><a class="nav-link" data-filter="*" href="#all-products">All products</a><span class="tab-border bg-extra-dark-gray"></span></li>
+                         
+                          
+                           
+                         
+                           
+                            
+                            <!-- {% for x in category_values %}
+                          <li class="nav-item"><a class="nav-link" data-filter=".{{ x.title }}" href= #x.title>{{ x.title }}</a><span class="tab-border bg-extra-dark-gray"></span></li>
+                            {% endfor %} -->
+                        </ul>
+                        
+
+                        <!-- end filter navigation -->
+                    </div>
+                    <div class="side-navigation">
+                      <h2>Select a location:</h2>
+                      <ul>
+                          <li><a href="Dharwad/">Dharwad</a></li>
+                          <li><a href="Bengaluru">Bangalore</a></li>
+                          <li><a href="Raichur">Raichur</a></li>
+                          <li><a href="Koppal">Koppal</a></li>
+                      </ul>
+                  </div> 
+                </div>
+            </div>
+
+<!-- <div class="container">
+  <div class="row">
+      {% for x in product_data %}
+      <div class="col-md-3 ftco-animate">
+          <div class="product">
+              
+                  <a href="#"><img class="img-fluid" src="media/{{ x.product_image }}" alt="{{ x.title }}"></a>
+                  <div class="overlay"></div>
+              
+              <div class="text py-3 pb-4 px-3 text-center">
+                  <h3><a href="#">{{ x.title }}</a></h3>
+                  <p class="category">{{ x.category }}</p>
+                  <div class="d-flex">
+                      <div class="pricing">
+                          <p class="price">Rs.{{ x.price }}</p>
+                      </div>
+                  </div>
+                  
+                  <a href="/add-to-cart/{{ x.id }}" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                      <span><i class="ion-ios-cart"></i></span>
+                  </a>
+              </div>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+</div> -->
+
+
+<div class="container">
+  <div class="row">
+      {% for x in product_data %}
+      <div class="col-md-3 ftco-animate">
+          <div class="product">
+              
+                  <a href="#"><img class="img-fluid" src="media/{{ x.img }}" alt="{{ x.product_name }}"></a>
+                  <div class="overlay"></div>
+              
+              <div class="text py-3 pb-4 px-3 text-center">
+                  <h3><a href="#">{{ x.name }}</a></h3>
+                  <p class="category">{{ x.uname }}</p>
+                  <div class="d-flex">
+                      <div class="pricing">
+                          <p class="price">Rs.{{ x.price }}</p>
+                          <p class="quantity">Quantity: {{ x.quantity }}</p>
+                      </div>
+                  </div>
+                  
+                  <a href="/add-to-cart/{{ x.id }}" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                      <span><i class="ion-ios-cart"></i></span>
+                  </a>
+              </div>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+
+
+
+
+		
+		
+		<section class="ftco-section img" style="background-image: url(static/images/bag13.jpg);">
+    	<div class="container">
+				<div class="row justify-content-end">
+          <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
+          	<!-- <span class="subheading">Best Products For You</span> -->
+           
+
+            <!-- <p style="font-size: 16px; color: #007700; font-weight: bold;">"From our farm to your plate, we bring you the finest quality rice, nurturing every grain with care and dedication."</p> -->
+            
+          
+        </div> 
+        	
+    	</div>
+    </section>
+    
+
+    <section class="ftco-section testimony-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+          	<span class="subheading">Reviews</span>
+            <h2 class="mb-4">Our satisfied customer says</h2>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel">
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url(static/images/profile1.png)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">"Sagaranadu Sattvic Foods  has cracked the code for creating low GI rice that doesn't skimp on flavor. "</p>
+                    <p class="name">Sai D</p>
+                    <span class="position">Engineer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url(static/images/profile2.png)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line"> This rice is a game-changer for anyone looking to manage their blood sugar levels. It's a bit on the premium side, but the nutritional benefits are well worth it.</p>
+                    <p class="name">Spoorti J</p>
+                    <span class="position">Data Engineer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url(static/images/profile1.png)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line"> I love that I can enjoy a hearty meal without the sugar spikes. Sagaranadu rice offers balanced energy and an unforgettable taste.</p>
+                    <p class="name">Gautam G</p>
+                    <span class="position">UI Designer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url(static/images/profile1.png)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">I love that I can enjoy a hearty meal without the sugar spikes. Sagaranadu rice offers balanced energy and an unforgettable taste.</p>
+                    <p class="name">Santosh</p>
+                    <span class="position">Web Developer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url(static/images/profile2.png)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line"> I love that I can enjoy a hearty meal without the sugar spikes. Sagaranadu rice offers balanced energy and an unforgettable taste.</p>
+                    <p class="name">Nikhita</p>
+                    <span class="position">System Analyst</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+		<footer class="ftco-footer ftco-section">
+      <div class="container">
+      	<div class="row">
+      		<div class="mouse">
+						<a href="#" class="mouse-icon">
+							<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
+						</a>
+					</div>
+      	</div>
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">AgroCart</h2>
+              <p>"Crafted with excellence, our rice is cultivated with the utmost care and dedication, ensuring each grain embodies the finest quality."</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Menu</h2>
+              <ul class="list-unstyled">
+                <li><a href="" class="py-2 d-block">Our Products</a></li>
+                <li><a href="about" class="py-2 d-block">About</a></li>
+                <li><a href="contact" class="py-2 d-block">Contact Us</a></li>
+                <!-- <li><a href="cancellation" class="py-2 d-block">Cancellation and Refunds</a></li> -->
+                <!-- <li><a href="policy" class="py-2 d-block">Policy</a></li> -->
+                <!-- <li><a href="Terms_and_conditions" class="py-2 d-block">Terms_and_conditions</a></li> -->
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <!-- <h2 class="ftco-heading-2">Menu</h2> -->
+              <ul class="list-unstyled">
+                <!-- <li><a href="" class="py-2 d-block">Our Products</a></li> -->
+                <!-- <li><a href="about" class="py-2 d-block">About</a></li> -->
+                <!-- <li><a href="contact" class="py-2 d-block">Contact Us</a></li> -->
+                <li><a href="cancellation" class="py-2 d-block">Cancellation and Refunds</a></li>
+                <li><a href="policy" class="py-2 d-block">Policy</a></li>
+                <li><a href="shipping" class="py-2 d-block">Shipping Policy</a></li>
+                <li><a href="Terms_and_conditions" class="py-2 d-block">Terms and conditions</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Hagel Technologies, Akalwadi Complex 1st Floor Vidyanagar Hubblli-21 , Karnataka.</li>
+	                <li><a><span class="icon icon-phone"></span><span class="text">+91 9513107593</span></a></li>
+	                <li><a><span class="icon icon-envelope"></span><span class="text">gautamshigaonkar@gmail.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p>
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made and hosted with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://www.linkedin.com/company/haegl-academy/" target="_blank">Haegl Technologies Pvt Ltd</a>
+						  
+						</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  
+
+
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="static/js/popper.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/jquery.easing.1.3.js"></script>
+  <script src="static/js/jquery.waypoints.min.js"></script>
+  <script src="static/js/jquery.stellar.min.js"></script>
+  <script src="static/js/owl.carousel.min.js"></script>
+  <script src="static/js/jquery.magnific-popup.min.js"></script>
+  <script src="static/js/aos.js"></script>
+  <script src="static/js/jquery.animateNumber.min.js"></script>
+  <script src="static/js/bootstrap-datepicker.js"></script>
+  <script src="static/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="static/js/google-map.js"></script>
+  <script src="static/js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function updateQuantity(action, itemId) {
+      // Send an AJAX request to update the quantity.
+      fetch(`/update_quantity/${itemId}/${action}/`)
+        .then(response => response.json())
+        .then(data => {
+          // Update the quantity displayed on the page.
+          document.getElementById(`quantity${itemId}`).textContent = data.new_quantity;
+        })
+        .catch(error => {
+          console.error('Error updating quantity:', error);
+        });
+    }
+    </script>
+  
+  
+  <script type="text/javascript">
+    var revapi263,
+            tpj;
+    (function () {
+        if (!/loaded|interactive|complete/.test(document.readyState))
+            document.addEventListener("DOMContentLoaded", onLoad);
+        else
+            onLoad();
+        function onLoad() {
+            if (tpj === undefined) {
+                tpj = jQuery;
+                if ("off" == "on")
+                    tpj.noConflict();
+            }
+            if (tpj("#rev_slider_35_1").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_35_1");
+            } else {
+                var revOffset = tpj(window).width() <= 767 ? '77px' : '128px';
+                revapi263 = tpj("#rev_slider_35_1").show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "revolution/js/",
+                    sliderLayout: "fullwidth",
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    navigation: {
+                        keyboardNavigation: "on",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        mouseScrollReverse: "default",
+                        onHoverStop: "off",
+                        touch: {
+                            touchenabled: "on",
+                            touchOnDesktop: "on",
+                            swipe_threshold: 75,
+                            swipe_min_touches: 1,
+                            swipe_direction: "horizontal",
+                            drag_block_vertical: false
+                        },
+                        tabs: {
+                            enable: true,
+                            style: 'erinyen',
+                            direction: 'horizontal',
+                            h_align: "center",
+                            v_align: "bottom",
+                            h_offset: -480,
+                            v_offset: 80,
+                            space: 25,
+                            hide_onleave: false,
+                            hide_onmobile: false,
+                            wrapper_padding: 0,
+                            width: 20,
+                            height: ['auto'],
+                            wrapper_color: 'transparent',
+                            wrapper_opacity: '0',
+                            tmp: '<span class="alt-font text-extra-dark-gray">{{param1}}</span>',
+                        }
+                    },
+                    responsiveLevels: [1240, 1025, 992, 480],
+                    visibilityLevels: [1240, 1024, 778, 480],
+                    gridwidth: [1140, 1024, 778, 480],
+                    gridheight: [870, 640, 910, 868],
+                    lazyType: "none",
+                    shadow: 0,
+                    spinner: "spinner5",
+                    stopLoop: "on",
+                    stopAfterLoops: 0,
+                    stopAtSlide: 1,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    fullScreenAutoWidth: "off",
+                    fullScreenAlignForce: "off",
+                    fullScreenOffsetContainer: "",
+                    fullScreenOffset: revOffset,
+                    disableProgressBar: "on",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLimit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        nextSlideOnWindowFocus: "off",
+                        disableFocusListener: false,
+                    }
+                });
+            }
+            ; /* END OF revapi call */
+
+            BubbleMorphAddOn(jQuery, revapi263);
+        }
+        ; /* END OF ON LOAD FUNCTION */
+    }()); /* END OF WRAPPING FUNCTION */
+</script>
+<script>
+    $(document).ready(function() {
+        $(".increment-quantity").click(function() {
+            var productId = $(this).data("product-id");
+            var quantityElement = $(".quantity[data-product-id='" + productId + "']");
+            var currentQuantity = parseInt(quantityElement.text());
+            quantityElement.text(currentQuantity + 1);
+        });
+
+        $(".decrement-quantity").click(function() {
+            var productId = $(this).data("product-id");
+            var quantityElement = $(".quantity[data-product-id='" + productId + "']");
+            var currentQuantity = parseInt(quantityElement.text());
+            if (currentQuantity > 1) {
+                quantityElement.text(currentQuantity - 1);
+            }
+        });
+    });
+</script>
+
+
+
+    
+  </body>
+</html>
